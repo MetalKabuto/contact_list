@@ -11,7 +11,7 @@
         {
             string lastFileName = "address.lis";
             string[] commandLine;
-            Console.WriteLine("Hello and welcome to the contact list");
+            Console.WriteLine("Hello and weadasdasdasdlcome to the contact list");
             Console.WriteLine("Avaliable commands: ");
             Console.WriteLine("  load        - load contact list data from the file address.lis");
             Console.WriteLine("  load /file/ - load contact list data from the file");
