@@ -7,13 +7,11 @@
         {
             public string persname, surname, phone, address, birthdate;
         }
-        public static void Main(string[] args)
+        //Används när programmet startar och för 'hjälp'
+        private static void CommandList()
         {
-            string lastFileName = "address.lis";
-            string[] commandLine;
-            Console.WriteLine("Hello and weadasdasdasdlcome to the contact list");
-            Console.WriteLine("Avaliable commands: ");
-            Console.WriteLine("  load        - load contact list data from the file address.lis");
+            Console.WriteLine("Available commands: ");
+            Console.WriteLine("  load        - load contact list data from the file address.txt");
             Console.WriteLine("  load /file/ - load contact list data from the file");
             Console.WriteLine("  new        - create new person");
             Console.WriteLine("  new /persname/ /surname/ - create new person with personal name and surname");
@@ -21,6 +19,13 @@
             Console.WriteLine("  save         - save contact list data to the file previously loaded");
             Console.WriteLine("  save /file/ - save contact list data to the file");
             Console.WriteLine();
+        }
+        public static void Main(string[] args)
+        {
+            string lastFileName = @"C:\Users\Hanne\Desktop\Datalogiskt tänkande och Problemlösning\Vecka 2\Dag 6\address.txt";
+            string[] commandLine;
+            Console.WriteLine("Hello and welcome to the contact list");
+            CommandList();
             do
             {
                 Console.Write($"> ");
@@ -34,7 +39,7 @@
                 {
                     if (commandLine.Length < 2)
                     {
-                        lastFileName = "address.lis";
+                        lastFileName = @"C:\Users\Hanne\Desktop\Datalogiskt tänkande och Problemlösning\Vecka 2\Dag 6\address.txt";
                         using (StreamReader infile = new StreamReader(lastFileName))
                         {
                             string line;
@@ -127,17 +132,7 @@
                 }
                 else if (commandLine[0] == "help")
                 {
-                    Console.WriteLine("Avaliable commands: ");
-                    Console.WriteLine("  delete       - emtpy the contact list");
-                    Console.WriteLine("  delete /persname/ /surname/ - delete a person");
-                    Console.WriteLine("  load        - load contact list data from the file address.lis");
-                    Console.WriteLine("  load /file/ - load contact list data from the file");
-                    Console.WriteLine("  new        - create new person");
-                    Console.WriteLine("  new /persname/ /surname/ - create new person with personal name and surname");
-                    Console.WriteLine("  quit        - quit the program");
-                    Console.WriteLine("  save         - save contact list data to the file previously loaded");
-                    Console.WriteLine("  save /file/ - save contact list data to the file");
-                    Console.WriteLine();
+                    CommandList();
                 }
                 else
                 {
